@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&family=Roboto+Condensed:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:ital@1&family=Roboto+Condensed:wght@300&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Nunito', sans-serif; */
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    font-family: 'Lobster', cursive;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container
+{
+    margin: 0 40px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container h1
+{
+    color:#c7ecee;
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    /* font-family: 'Nunito', sans-serif; */
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    }
+.container .tab
+{
+    position: relative;
+    background: hidden;
+    padding: 0 20px 20px;
+    /* box-shadow: 0 15px 25px rgba(0,0,0,0.05); */
+    border-radius: 5px;
+    overflow: hidden;
+}
+.container .tab input
+{
+    appearance: none;
+}
+.container .tab label
+{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.container .tab label::after
+{
+    /* content: '+'; */
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: rgba(0,0,0,0.1);
+    transition: transform 1s;
+}
+.container .tab:hover label::after
+{
+    color: #333;
+}
+.container .tab input:checked ~ label::after
+{
+    transform: rotate(135deg);
+    color: #fff;
+}
+.container .tab label h2
+{
+    width: 40px;
+    height: 40px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.container .tab input:checked ~ label h2
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255,255,255,0.2);
+    font-size: 0.8em;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.container .tab:nth-child(2) label h2
+{
+    background: linear-gradient(135deg, #0ceb0c, #7ff85d);
+}
+.container .tab:nth-child(3) label h2
+{
+    background: linear-gradient(135deg, #3c8ce7, #00eaff);
+}
+.container .tab:nth-child(4) label h2
+{
+    background: linear-gradient(135deg, #ff96f9, #c32bac);
+}
+.container .tab:nth-child(5) label h2
+{
+    background: linear-gradient(135deg, #fd6e6a, #ffc600);
+}
+.container .tab:nth-child(6) label h2
+{
+    background: linear-gradient(135deg, #d6e10d, #b99513);
+}
+.container .tab:nth-child(7) label h2
+{
+    background: linear-gradient(135deg, #750dba, #b42fdc);
+}
+.container .tab label h3
+{
+    position: relative;
+    /* font-weight: 500; */
+    font-size: 23px;
+    color: #fff;
+    z-index: 10;
+}
+.container .tab input:checked ~ label h3
+{
+    background: rgb(255, 255, 255);
+    padding: 2px 10px;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.container .tab .content
+{
+    max-height: 0;
+    transition: 0.7s;
+    overflow: hidden;
+}
+.container .tab input:checked ~ .content
+{
+    max-height: 100vh;
+}
+.container .tab .content p
+{
+    position: relative;
+    padding: 10px 0;
+    color: #000;
+    z-index: 10;
+}
+.container .tab input:checked ~ .content p
+{
+    color:#000;
+    font-size: 20px;
+}
+.container .tab .content p .button1
+{
+    display: block;
+    border-radius: 4px;
+    background-color: #3498db;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 8px;
+}
+.container .tab .content p .button1 span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.container .tab .content p .button1 span::after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.container .tab .content p .button1:hover span
+{
+    padding-right: 25px;
+}
+.container .tab .content p .button1:hover span::after
+{
+    opacity: 1;
+    right: 0;
+}
+.container .tab .content p .button1:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.container .tab .content p .button2
+{
+    display: block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 8px;
+}
+.container .tab .content p .button2 span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.container .tab .content p .button2 span::after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.container .tab .content p .button2:hover span
+{
+    padding-right: 25px;
+}
+.container .tab .content p .button2:hover span::after
+{
+    opacity: 1;
+    right: 0;
+}
+.container .tab .content p .button2:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.container .tab .content p .button3
+{
+    display: block;
+    border-radius: 4px;
+    background-color: #2ecc71;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 8px;
+}
+.container .tab .content p .button3 span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.container .tab .content p .button3 span::after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.container .tab .content p .button3:hover span
+{
+    padding-right: 25px;
+}
+.container .tab .content p .button3:hover span::after
+{
+    opacity: 1;
+    right: 0;
+}
+.container .tab .content p .button3:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#video_background 
+{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    /* min-width: 100%;
+    min-height: 100%; */
+    width: 1925px;
+    height: 1085px;
+    z-index: -1000;
+    overflow: hidden;
+}
+.name
+{
+    position: absolute;
+    right: 5px;
+    font-size: 15px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 110px;
+    width: 230px;
+    color: #affde7f1;
+    text-align: left;
+    align-self: end;
+}
+.name h1
+{
+    color: #7ed6df;
+}
+.name .icon
+{
+    color: #fff;
+}
+.name p a
+{
+    color: #affde7f1;
+    text-decoration: none;
+}
+.music
+{
+    position: absolute;
+    left: 16px;
+    align-self: end;
+    margin-bottom: 10px;
+}
